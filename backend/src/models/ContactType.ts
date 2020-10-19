@@ -1,20 +1,17 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from 'typeorm';
 import PersonContact from './PersonContact';
 
-@Entity('person')
-export default class Person{
+@Entity('contactType')
+export default class ContactType{
     @PrimaryGeneratedColumn('increment')
     id: number;
 
     @Column()
-    first_name: string;
+    name: string;
 
-    @Column()
-    last_name:string;
-
-    @OneToMany(() => PersonContact, personContact => personContact.person, {
+    @OneToMany(() => PersonContact, personContact => personContact.contactType, {
         cascade:['insert','update']
     })
-    @JoinColumn({ name:'person_id'})
+    @JoinColumn({ name:'contactType_id'})
     personContact: PersonContact[];
 }

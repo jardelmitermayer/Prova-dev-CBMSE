@@ -1,6 +1,6 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export default class CreatePerson1602792603422 implements MigrationInterface {
+export class createPerson1603091729434 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {  //metodo que realiza as alterações que queremos no banco de dados(ex:criar tabela, criar um novo campo, deletar algum campo)
     await queryRunner.createTable( //criando tabela
